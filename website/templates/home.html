@@ -4,7 +4,12 @@
 <h1 align="center">Todos</h1>
 <ul class="list-group list-group-flush" id="todos">
     {% for todo in user.todos %}
-        <li class="list-group-item">{{todo.data}}</li>
+        <li class="list-group-item">
+            {{todo.data}}
+            <button type="button" class="close" onclick="deleteTodo({{ todo.id }})">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </li>
     {% endfor %}
 </ul>
 <form method="POST">
